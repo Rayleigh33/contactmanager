@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+  <meta charset="utf-8">
+  <title>add contact page</title>
+</head>
+<body>
+
+<section>
+  <div class="card mr-3">
+  
+     <div class="card-body">
+     
+         <h1 class="text-center">Add Contact</h1>
+         
+         <div class="container-fluid mt-1">
+         
+             <div class="row">
+             
+                 <div class="col-md-10 offset-md-1">
+                 
+                 <form th:object="${contact}"
+                       enctype="multipart/form-data"
+                       method="POST"
+                       th:action="@{/user/process-contact}"
+                       class="mt-2">
+                 
+                    <div class="input-group mt-3">
+                    
+                       <input required="required" type="text" id="firstName" name="name" placeholder="enter first name" class="form-control">
+                       
+                    </div>
+                    
+                     <div class="input-group mt-3">
+                    
+                       <input required="required" type="text" id="nickName" name="nickName" placeholder="enter nick name" class="form-control">
+                       
+                    </div>
+                    
+                    <div class="input-group mt-3">
+                    
+                       <input required="required" type="number" id="phone" name="phone" placeholder="enter phone number" class="form-control">
+                       
+                    </div>
+                    
+                    <div class="input-group mt-3">
+                    
+                       <input required="required" type="email" id="email" name="email" placeholder="enter email" class="form-control">
+                       
+                    </div>
+                    
+                    <div class="input-group mt-3">
+                    
+                       <input required="required" type="text" id="work" name="work" placeholder="enter work occupation" class="form-control">
+                       
+                    </div>
+                    
+                    <div class="input-group mt-3">
+                    
+                       <textarea placeholder="enter contact description" name="description" id="description" class="form-control" rows="10"></textarea>
+                       
+                    </div>
+                    
+                    <div class="custom-file mt-3">
+                       <input type="file" name="profileImage" />
+                    </div>
+                    
+                    <div class="container text-center">
+                       <button class="btn btn-primary">Save Contact</button>
+                    </div>
+                 </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+  </div>
+</section>
+</body>
+</html>
